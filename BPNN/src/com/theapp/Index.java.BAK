@@ -1,0 +1,706 @@
+/*
+ * By Joseph joseph dot tarigan at gmail dot com on WOLF
+ */
+package com.theapp;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.swing.border.EtchedBorder;
+
+import com.charset.CharConfig;
+import javax.swing.SwingConstants;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.block.EmptyBlock;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
+
+public class Index extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/*
+	 * Panes
+	 */
+	private JPanel contentPane;
+	private JPanel northPane;
+	private JPanel centerPane;
+	private JPanel southPane;
+	
+	//north
+	private JPanel northNBorderLayoutContainer;
+	private JPanel northCBorderLayoutContainer;
+	private JPanel northSBorderLayoutContainer;
+	
+	//center
+	private JPanel centerWGridContainer;
+	private JPanel centerEGridContainer;
+	private JPanel MSEContainer;
+	private JPanel epochContainer;
+	private JPanel elapsedTimeContainer;
+	
+	/*
+	 * Enumerator for statuses
+	 */
+	private static enum trainerStatuses {
+		NOTREADY("Not Ready"), READY("Ready"), TRAINING("Training"), WRITING("Writing"), DONE("Done"), STOPPED("Stopped");
+		private String value;
+		
+		private trainerStatuses(String s){
+			this.value = s;
+		}
+		
+		public String toString(){
+			return value;
+		}
+	}
+	/*
+	 * Labels
+	 */
+	private JLabel statusState;
+	private JLabel statusLabel;
+	private JLabel MSELabel;
+	private JLabel MSEValue;
+	private JLabel elapsedTimeLabel;
+	private JLabel elapsedTimeValue;
+	private JLabel epochLabel;
+	private JLabel epochValue;
+	private JLabel outputFilePath;
+	private JLabel outputFileLabel;
+	private JLabel targetErrorLabel;
+	private JLabel targetErrorValue;
+	/*
+	 * Buttons
+	 */
+	private JButton startTrainingButton;
+	private JButton pauseTrainingButton;
+	private JButton showSaveDialogButton;
+	/*
+	 * Save file path
+	 */
+	private String saveFilePath = new String();
+	/*
+	 * The Neural Networks
+	 * Default momentum rate is 0.3
+	 * Default learning rate is 0.7
+	 */
+	static AlphaNumericNeuralNetworks alphaNumericNeuralNetworks = new AlphaNumericNeuralNetworks();
+	/*
+	 * Looping control
+	 */
+	private boolean trainingLoop = false;
+	/*
+	 * Target error, epoch & MSE
+	 */
+	private double targetError = 0.00001;
+	private double MSE;
+	private int epoch = 0;
+	/*
+	 * Thread for training
+	 */
+	static Thread trainingThread, dc, wc, updateData, uc;
+	
+	/*
+	 * Execution time 
+	 */
+	long startTime, endTime, elapsedTime = 0, tempTime, currentTime;
+	/*
+	 * JFreeChart objects
+	 */
+	static XYSeries trainingSeries = null;
+	static XYSeriesCollection trainingSeriesCollection = null;
+    static JFreeChart trainingChart = null;
+    static ChartPanel chartPanel = null;
+    /*
+     * XYSeries holder
+     */
+    static List<Double> MSESeries = new ArrayList<Double>();
+    static List<Integer> epochSeries = new ArrayList<Integer>();
+	
+	
+	/**
+	 * Launch the application.
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		
+		/*
+		 * Run
+		 */
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Index frame = new Index();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 * @throws IOException 
+	 */
+	public Index() throws IOException {
+		
+		/*
+		 * Initialisation =========================================================
+		 */	
+		setResizable(false);
+		setSize(800, 680);
+		setTitle("Neural Networks Trainer");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 680);	
+		
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(5, 5));
+		
+		/*
+		 * ========================================================================
+		 */
+		
+		/*
+		 * North Pane =============================================================
+		 */
+		northPane = new JPanel();
+		northPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		northPane.setLayout(new GridLayout(3, 1, 0, 0));
+		
+		/*
+		 * North North
+		 */
+		northNBorderLayoutContainer = new JPanel();
+		northNBorderLayoutContainer.setLayout(new BorderLayout(5, 0));
+		northNBorderLayoutContainer.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		statusLabel = new JLabel("Status");
+		statusLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		
+		statusState = new JLabel(trainerStatuses.NOTREADY.toString());
+		statusState.setFont(new Font("Tahoma", Font.BOLD, 12));
+		
+		northNBorderLayoutContainer.add(statusLabel, BorderLayout.WEST);
+		northNBorderLayoutContainer.add(statusState, BorderLayout.CENTER);
+		
+		/*
+		 * North Center
+		 */
+		
+		northCBorderLayoutContainer = new JPanel();
+		northCBorderLayoutContainer.setLayout(new BorderLayout(5, 0));
+		northCBorderLayoutContainer.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		targetErrorLabel = new JLabel("Target Error");
+		targetErrorLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		
+		targetErrorValue = new JLabel("0.00001\r\n");
+		targetErrorValue.setFont(new Font("Tahoma", Font.BOLD, 12));
+		
+		northCBorderLayoutContainer.add(targetErrorLabel, BorderLayout.WEST);
+		northCBorderLayoutContainer.add(targetErrorValue, BorderLayout.CENTER);
+		
+		/*
+		 * North South
+		 */
+		
+		northSBorderLayoutContainer = new JPanel();
+		northSBorderLayoutContainer.setLayout(new BorderLayout(5, 0));
+		northSBorderLayoutContainer.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		outputFileLabel = new JLabel("Output Directory");
+		outputFileLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		
+		outputFilePath = new JLabel("None");
+		outputFilePath.setFont(new Font("Tahoma", Font.BOLD, 12));
+		
+		showSaveDialogButton = new JButton("Browse");
+		showSaveDialogButton.addActionListener(new SaveDialog());
+		
+		northSBorderLayoutContainer.add(outputFileLabel, BorderLayout.WEST);
+		northSBorderLayoutContainer.add(outputFilePath, BorderLayout.CENTER);
+		northSBorderLayoutContainer.add(showSaveDialogButton, BorderLayout.EAST);
+		
+		northPane.add(northNBorderLayoutContainer);
+		northPane.add(northCBorderLayoutContainer);
+		northPane.add(northSBorderLayoutContainer);
+		contentPane.add(northPane, BorderLayout.NORTH);
+		
+		/*
+		 * ========================================================================
+		 */
+		
+		
+		/*
+		 * Center Pane ============================================================
+		 */
+		centerPane = new JPanel();
+		centerPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		centerPane.setLayout(new BorderLayout(5, 5));
+		
+		/*
+		 * Center West
+		 */
+		centerWGridContainer = new JPanel();
+		centerWGridContainer.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		centerWGridContainer.setLayout(new GridLayout(3, 1, 5, 5));
+		centerWGridContainer.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		MSEContainer = new JPanel(new BorderLayout(5,5));
+		MSELabel = new JLabel("MSE    : ");
+		MSEValue = new JLabel("0.0", SwingConstants.LEFT);
+		MSEContainer.add(MSELabel, BorderLayout.WEST);
+		MSEContainer.add(MSEValue, BorderLayout.EAST);
+		
+		epochContainer = new JPanel(new BorderLayout(5,5));
+		epochLabel = new JLabel("Epoch : ");
+		epochValue = new JLabel("0", SwingConstants.LEFT);
+		epochContainer.add(epochLabel, BorderLayout.WEST);
+		epochContainer.add(epochValue, BorderLayout.EAST);
+		
+		elapsedTimeContainer = new JPanel(new BorderLayout(5,5));
+		elapsedTimeLabel = new JLabel("Elapsed Time : ");
+		elapsedTimeValue = new JLabel("0 ms", SwingConstants.LEFT);
+		elapsedTimeContainer.add(elapsedTimeLabel, BorderLayout.WEST);
+		elapsedTimeContainer.add(elapsedTimeValue, BorderLayout.EAST);
+		
+		centerWGridContainer.add(MSEContainer);
+		centerWGridContainer.add(epochContainer);
+		centerWGridContainer.add(elapsedTimeContainer);
+		
+		centerPane.add(centerWGridContainer, BorderLayout.WEST);
+		
+		
+		/*
+		 * Center East
+		 */
+		centerEGridContainer = new JPanel();
+		centerEGridContainer.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		centerEGridContainer.setLayout(new GridLayout(2, 1, 5, 5));
+		centerEGridContainer.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		startTrainingButton = new JButton("Start Training");
+		startTrainingButton.addActionListener(new TrainNeuralNetworks());
+		pauseTrainingButton = new JButton("Pause Training");
+		pauseTrainingButton.addActionListener(new PauseTraining());
+		
+		centerEGridContainer.add(startTrainingButton);
+		centerEGridContainer.add(pauseTrainingButton);
+		
+		centerPane.add(centerEGridContainer, BorderLayout.EAST);
+		
+		contentPane.add(centerPane, BorderLayout.CENTER);
+
+		
+		/*
+		 * ========================================================================
+		 */
+		
+		/*
+		 * South Pane =============================================================
+		 */
+		southPane = new JPanel();
+		southPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		southPane.setLayout(new BorderLayout(5, 5));
+		
+		//draw
+		uc = new UpdateChart();
+		uc.start();
+		
+		/*
+		 * ========================================================================
+		 */
+	}
+	
+	/*
+	 * Initialisation of the neural networks
+	 */
+	@SuppressWarnings("unused")
+	private static void init() throws IOException{
+		
+		alphaNumericNeuralNetworks = new AlphaNumericNeuralNetworks();
+	}
+
+	class TrainNeuralNetworks implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			/*
+			 * Check whether the saving directory has set
+			 */
+			if(saveFilePath.isEmpty()){
+				//JDialog warning = new JDialog();
+				JOptionPane.showMessageDialog(null, "Saving directory hasn't been set!", "Warning", JOptionPane.ERROR_MESSAGE);
+			}
+			else{
+				/*
+				 * Start training
+				 * Set status to training
+				 * Set trainingLoop to true
+				 */
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						
+						statusState.setText(trainerStatuses.TRAINING.toString());		
+					}
+				});
+				
+				trainingLoop = true;
+				
+				/*
+				 * Start
+				 */
+				//trainingThread.g
+				trainingThread = new StartTraining();
+				trainingThread.start();
+			}
+		}
+	}
+	
+	class SaveDialog implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			/*
+			 * Open save dialog
+			 */
+			JFileChooser saveFileChooser = new JFileChooser();
+			saveFileChooser.setDialogTitle("Specify the directory to save the files");
+			/*
+			 * Set it to directory only mode
+			 */
+			saveFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			
+			int userSelection = saveFileChooser.showSaveDialog(contentPane);
+			
+			if(userSelection == JFileChooser.APPROVE_OPTION){
+				
+				/*
+				 * Set label to the absolute path
+				 * Set saveFilePath to the absolute path
+				 */
+				outputFilePath.setText(saveFileChooser.getSelectedFile().getAbsolutePath());
+				saveFilePath = saveFileChooser.getSelectedFile().getAbsolutePath();
+			}
+		}
+	}
+	
+	class PauseTraining implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			/*
+			 * Training is stopped by user intervention
+			 */
+			SwingUtilities.invokeLater(new Runnable() {
+				
+				@Override
+				public void run() {
+					
+					statusState.setText(trainerStatuses.STOPPED.toString());			
+				}
+			});
+			
+			
+			trainingLoop = false;
+		}
+		
+	}
+	
+	/*
+	 * Start training thread
+	 * Using independent thread
+	 */
+	class StartTraining extends Thread{
+
+		@Override
+		public void run() {
+			
+			/*
+			 * Local variable to control loop
+			 */
+			MSE = 256;
+			
+			/*
+			 * Start timer
+			 */
+			if(startTime == 0){
+				startTime = System.currentTimeMillis();
+			}
+			else{
+				startTime = System.currentTimeMillis() + tempTime;
+			}
+
+			/*
+			 * Set epoch to zero
+			 */
+			//alphaNumericNeuralNetworks.setEpochToZero();
+			
+			/*
+			 * Set all List to 0
+			 */
+			//MSESeries.clear();
+			//epochSeries.clear();
+			
+			while(trainingLoop && MSE > targetError){
+			
+				/*
+				 * For each char set
+				 */
+				for(int i=0; i<CharConfig.CHARSET_COUNT; i++){
+					/*
+					 * Training
+					 */
+					alphaNumericNeuralNetworks.trainNeuralNetworks(i);
+					MSE = alphaNumericNeuralNetworks.getMSE();
+					epoch = alphaNumericNeuralNetworks.getEpoch();
+					/*
+					 * Store epoch and MSE value into series 
+					 */
+					MSESeries.add(alphaNumericNeuralNetworks.getMSE());
+					epochSeries.add(alphaNumericNeuralNetworks.getEpoch());
+					/*
+					 * Update MSE value & epoch
+					 * Sleep first, 100 is the ideal sleep time, but it could be faster in a more sophisticated system
+					 */
+					try {
+						StartTraining.sleep(50);
+						
+						//store current elapsed time
+						currentTime = startTime - System.currentTimeMillis();
+						//thread for updating data
+						updateData = new UpdateTrainingData(alphaNumericNeuralNetworks.getMSE(), alphaNumericNeuralNetworks.getEpoch(), startTime - System.currentTimeMillis());
+						updateData.start();
+						
+						uc = new UpdateChart();
+						uc.start();
+						
+					} catch (InterruptedException e) {
+						
+						e.printStackTrace();
+					}
+				}
+			}
+			
+			/*
+			 * Completed
+			 */
+			trainingLoop = false;
+			/*
+			 * Stop timer
+			 */
+			endTime = System.currentTimeMillis();
+			tempTime = startTime - endTime;
+			elapsedTime += tempTime;
+			
+			/*
+			 * if MSE < targetError, then write weights data & chart
+			 * else, do nothing, set status to STOPPED
+			 */
+			if(MSE < targetError){
+				/*
+				 * Write data
+				 */
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						
+						statusState.setText(trainerStatuses.WRITING.toString());		
+					}
+				});
+				
+				try {
+					//write weight
+					alphaNumericNeuralNetworks.saveWeightData(saveFilePath);
+					
+					//write chart
+					wc = new WriteChart();
+					wc.start();
+					
+				} catch (FileNotFoundException e) {
+					
+					e.printStackTrace();
+				}
+				/*
+				 * Finally
+				 */
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						
+						statusState.setText(trainerStatuses.DONE.toString());	
+					}
+				});
+			}
+			else{
+				
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						
+						statusState.setText(trainerStatuses.STOPPED.toString());
+					}
+				});
+			}
+		}
+		
+	}
+	
+	/*
+	 * Separated thread for updating MSE & Epoch
+	 */
+	class UpdateTrainingData extends Thread{
+		
+		public UpdateTrainingData(double MSE, int epoch, long time){
+			
+			final double finalMSE = MSE;
+			final int finalEpoch = epoch;
+			final long finalTime = time;
+			
+			SwingUtilities.invokeLater(new Runnable() {
+
+				@Override
+				public void run() {
+					
+					MSEValue.setText(String.valueOf(finalMSE));
+					epochValue.setText(String.valueOf(finalEpoch));
+					//MSE = alphaNumericNeuralNetworks.getMSE();
+					elapsedTimeValue.setText(String.valueOf(Math.abs(finalTime)) + " ms");	
+				}
+			});
+		}
+	}
+	
+	/*
+	 * Draw/update chart
+	 */
+	class DrawChart extends Thread{
+		
+		public DrawChart(){
+			
+			//the series
+			trainingSeries = new XYSeries("MSE");
+			//the collection
+			trainingSeriesCollection = new XYSeriesCollection();
+			//Iterator for the data
+			Iterator<Double> MSEItr = MSESeries.iterator();
+			Iterator<Integer> epochItr = epochSeries.iterator();
+			
+			/*
+			 * If empty, draw nothing
+			 */
+			if(MSESeries.isEmpty()){
+				
+				trainingSeries.add(0, 0);
+				trainingSeriesCollection.addSeries(trainingSeries);
+			}
+			else{
+				
+				//put all data into the series
+				while(MSEItr.hasNext()){
+					
+					trainingSeries.add(epochItr.next(), MSEItr.next());
+				}
+				
+				//put the series into the collection
+				trainingSeriesCollection.addSeries(trainingSeries);
+			}
+			
+			//finally, draw the chart
+			trainingChart = ChartFactory.createXYLineChart("Training Chart", "Epoch", "MSE", trainingSeriesCollection);
+			
+		}
+	}
+	
+	//TODO
+	/*
+	 * Coba buat chartnya static, diinisialisasi satu kali sama trainingChart
+	 * Setiap aupdate trainingChart diubah, chartnya di updateUI()
+	 */
+	
+	class UpdateChart extends Thread{
+		
+		public UpdateChart(){
+
+			/*
+			 * Using invokeLater
+			 * not a Thread Safe
+			 */
+			SwingUtilities.invokeLater(new Runnable() {
+				
+				@Override
+				public void run() {
+					
+					dc = new DrawChart();
+					dc.start();
+
+					//chartPanel.updateUI();
+					//chartPanel.revalidate();
+					//chartPanel.repaint();
+					chartPanel = new ChartPanel(trainingChart, true);
+					chartPanel.setPreferredSize(new Dimension(780, 420));
+
+					southPane.add(chartPanel, BorderLayout.CENTER);
+					contentPane.add(southPane, BorderLayout.SOUTH);
+				}
+			});
+		}
+	}
+	
+	/*
+	 * Create the chart and save into a JPEG file
+	 */
+	class WriteChart extends Thread{
+		
+		public WriteChart(){
+			
+			try {
+				
+				ChartUtilities.saveChartAsJPEG(new File(saveFilePath + "\\TrainingChart.jpg"), trainingChart, 2000, 4000);
+				
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+		}
+	}
+}

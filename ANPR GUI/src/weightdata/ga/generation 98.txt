@@ -1,0 +1,1171 @@
+GENERATION : 98
+=========================================================
+
+=========================================================
+POPULATION DATA
+=========================================================
+
+----Individual #1-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111110
+Learning Rate        : 000001010
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 254
+Learning Rate        : 0.021484
+Momentum Rate        : 0.863281
+
+Fitness : 7.472790
+
+-----------------------------------------------------
+
+----Individual #2-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011001
+
+Momentum Rate        : 111111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.050781
+Momentum Rate        : 0.996094
+
+Fitness : 7.472789
+
+-----------------------------------------------------
+
+----Individual #3-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011101
+
+Momentum Rate        : 111111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.058594
+Momentum Rate        : 0.996094
+
+Fitness : 7.472660
+
+-----------------------------------------------------
+
+----Individual #4-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100110
+Learning Rate        : 000101010
+
+Momentum Rate        : 111111100
+
+Phenotype Data
+Hidden Neuron        : 230
+Learning Rate        : 0.083984
+Momentum Rate        : 0.994141
+
+Fitness : 7.472230
+
+-----------------------------------------------------
+
+----Individual #5-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111110
+Learning Rate        : 000001110
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 254
+Learning Rate        : 0.029297
+Momentum Rate        : 0.863281
+
+Fitness : 7.471958
+
+-----------------------------------------------------
+
+----Individual #6-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111101
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 253
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.471798
+
+-----------------------------------------------------
+
+----Individual #7-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100110
+Learning Rate        : 000101110
+
+Momentum Rate        : 111111110
+
+Phenotype Data
+Hidden Neuron        : 230
+Learning Rate        : 0.091797
+Momentum Rate        : 0.998047
+
+Fitness : 7.471662
+
+-----------------------------------------------------
+
+----Individual #8-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011110
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.060547
+Momentum Rate        : 0.871094
+
+Fitness : 7.471630
+
+-----------------------------------------------------
+
+----Individual #9-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000011101
+
+Momentum Rate        : 111110101
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.058594
+Momentum Rate        : 0.980469
+
+Fitness : 7.470786
+
+-----------------------------------------------------
+
+----Individual #10-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.470571
+
+-----------------------------------------------------
+
+----Individual #11-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011001
+
+Momentum Rate        : 111110101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.050781
+Momentum Rate        : 0.980469
+
+Fitness : 7.470559
+
+-----------------------------------------------------
+
+----Individual #12-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011000
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.048828
+Momentum Rate        : 0.871094
+
+Fitness : 7.470460
+
+-----------------------------------------------------
+
+----Individual #13-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101110
+Learning Rate        : 000011100
+
+Momentum Rate        : 110010000
+
+Phenotype Data
+Hidden Neuron        : 238
+Learning Rate        : 0.056641
+Momentum Rate        : 0.783203
+
+Fitness : 7.470195
+
+-----------------------------------------------------
+
+----Individual #14-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011110
+
+Momentum Rate        : 111111100
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.060547
+Momentum Rate        : 0.994141
+
+Fitness : 7.470154
+
+-----------------------------------------------------
+
+----Individual #15-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110101
+Learning Rate        : 000100110
+
+Momentum Rate        : 111111000
+
+Phenotype Data
+Hidden Neuron        : 245
+Learning Rate        : 0.076172
+Momentum Rate        : 0.986328
+
+Fitness : 7.470030
+
+-----------------------------------------------------
+
+----Individual #16-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110101
+Learning Rate        : 000100110
+
+Momentum Rate        : 111110000
+
+Phenotype Data
+Hidden Neuron        : 245
+Learning Rate        : 0.076172
+Momentum Rate        : 0.970703
+
+Fitness : 7.469957
+
+-----------------------------------------------------
+
+----Individual #17-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101011
+Learning Rate        : 000011001
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 235
+Learning Rate        : 0.050781
+Momentum Rate        : 0.871094
+
+Fitness : 7.469933
+
+-----------------------------------------------------
+
+----Individual #18-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000011001
+
+Momentum Rate        : 110010101
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.050781
+Momentum Rate        : 0.792969
+
+Fitness : 7.469769
+
+-----------------------------------------------------
+
+----Individual #19-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100010
+Learning Rate        : 000100010
+
+Momentum Rate        : 111111110
+
+Phenotype Data
+Hidden Neuron        : 226
+Learning Rate        : 0.068359
+Momentum Rate        : 0.998047
+
+Fitness : 7.469647
+
+-----------------------------------------------------
+
+----Individual #20-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110010
+Learning Rate        : 000100010
+
+Momentum Rate        : 111111110
+
+Phenotype Data
+Hidden Neuron        : 242
+Learning Rate        : 0.068359
+Momentum Rate        : 0.998047
+
+Fitness : 7.469576
+
+-----------------------------------------------------
+
+----Individual #21-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.469303
+
+-----------------------------------------------------
+
+----Individual #22-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111101
+Learning Rate        : 000100110
+
+Momentum Rate        : 111100100
+
+Phenotype Data
+Hidden Neuron        : 253
+Learning Rate        : 0.076172
+Momentum Rate        : 0.947266
+
+Fitness : 7.469223
+
+-----------------------------------------------------
+
+----Individual #23-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011110
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.060547
+Momentum Rate        : 0.871094
+
+Fitness : 7.468631
+
+-----------------------------------------------------
+
+----Individual #24-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.468330
+
+-----------------------------------------------------
+
+----Individual #25-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110101
+Learning Rate        : 000100110
+
+Momentum Rate        : 111111000
+
+Phenotype Data
+Hidden Neuron        : 245
+Learning Rate        : 0.076172
+Momentum Rate        : 0.986328
+
+Fitness : 7.468283
+
+-----------------------------------------------------
+
+----Individual #26-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.467900
+
+-----------------------------------------------------
+
+----Individual #27-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111110
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 254
+Learning Rate        : 0.056641
+Momentum Rate        : 0.863281
+
+Fitness : 7.467845
+
+-----------------------------------------------------
+
+----Individual #28-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110110
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 246
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.467752
+
+-----------------------------------------------------
+
+----Individual #29-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11011111
+Learning Rate        : 000011111
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 223
+Learning Rate        : 0.062500
+Momentum Rate        : 0.871094
+
+Fitness : 7.467448
+
+-----------------------------------------------------
+
+----Individual #30-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100010
+Learning Rate        : 000100110
+
+Momentum Rate        : 111111010
+
+Phenotype Data
+Hidden Neuron        : 226
+Learning Rate        : 0.076172
+Momentum Rate        : 0.990234
+
+Fitness : 7.467398
+
+-----------------------------------------------------
+
+----Individual #31-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101011
+Learning Rate        : 000011001
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 235
+Learning Rate        : 0.050781
+Momentum Rate        : 0.871094
+
+Fitness : 7.467390
+
+-----------------------------------------------------
+
+----Individual #32-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101011
+Learning Rate        : 000010111
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 235
+Learning Rate        : 0.046875
+Momentum Rate        : 0.871094
+
+Fitness : 7.467255
+
+-----------------------------------------------------
+
+----Individual #33-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111101
+Learning Rate        : 000001110
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 253
+Learning Rate        : 0.029297
+Momentum Rate        : 0.871094
+
+Fitness : 7.467186
+
+-----------------------------------------------------
+
+----Individual #34-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011011
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.054688
+Momentum Rate        : 0.871094
+
+Fitness : 7.467096
+
+-----------------------------------------------------
+
+----Individual #35-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101110
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 238
+Learning Rate        : 0.056641
+Momentum Rate        : 0.863281
+
+Fitness : 7.467095
+
+-----------------------------------------------------
+
+----Individual #36-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110000
+Learning Rate        : 000100110
+
+Momentum Rate        : 111111010
+
+Phenotype Data
+Hidden Neuron        : 240
+Learning Rate        : 0.076172
+Momentum Rate        : 0.990234
+
+Fitness : 7.467059
+
+-----------------------------------------------------
+
+----Individual #37-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100110
+Learning Rate        : 000101010
+
+Momentum Rate        : 111110101
+
+Phenotype Data
+Hidden Neuron        : 230
+Learning Rate        : 0.083984
+Momentum Rate        : 0.980469
+
+Fitness : 7.466961
+
+-----------------------------------------------------
+
+----Individual #38-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101000
+Learning Rate        : 000011100
+
+Momentum Rate        : 110110100
+
+Phenotype Data
+Hidden Neuron        : 232
+Learning Rate        : 0.056641
+Momentum Rate        : 0.853516
+
+Fitness : 7.466860
+
+-----------------------------------------------------
+
+----Individual #39-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011110
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.060547
+Momentum Rate        : 0.863281
+
+Fitness : 7.466740
+
+-----------------------------------------------------
+
+----Individual #40-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111011
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 251
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.466682
+
+-----------------------------------------------------
+
+----Individual #41-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100010
+
+Momentum Rate        : 111011100
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.068359
+Momentum Rate        : 0.931641
+
+Fitness : 7.466644
+
+-----------------------------------------------------
+
+----Individual #42-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110101
+Learning Rate        : 000010110
+
+Momentum Rate        : 111110000
+
+Phenotype Data
+Hidden Neuron        : 245
+Learning Rate        : 0.044922
+Momentum Rate        : 0.970703
+
+Fitness : 7.466592
+
+-----------------------------------------------------
+
+----Individual #43-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101011
+Learning Rate        : 000011001
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 235
+Learning Rate        : 0.050781
+Momentum Rate        : 0.871094
+
+Fitness : 7.466548
+
+-----------------------------------------------------
+
+----Individual #44-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11011111
+Learning Rate        : 000101001
+
+Momentum Rate        : 111111001
+
+Phenotype Data
+Hidden Neuron        : 223
+Learning Rate        : 0.082031
+Momentum Rate        : 0.988281
+
+Fitness : 7.466538
+
+-----------------------------------------------------
+
+----Individual #45-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111101
+Learning Rate        : 000100110
+
+Momentum Rate        : 111111000
+
+Phenotype Data
+Hidden Neuron        : 253
+Learning Rate        : 0.076172
+Momentum Rate        : 0.986328
+
+Fitness : 7.466528
+
+-----------------------------------------------------
+
+----Individual #46-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101111
+Learning Rate        : 000011101
+
+Momentum Rate        : 110111111
+
+Phenotype Data
+Hidden Neuron        : 239
+Learning Rate        : 0.058594
+Momentum Rate        : 0.875000
+
+Fitness : 7.466502
+
+-----------------------------------------------------
+
+----Individual #47-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.056641
+Momentum Rate        : 0.863281
+
+Fitness : 7.466474
+
+-----------------------------------------------------
+
+----Individual #48-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11101000
+Learning Rate        : 000101110
+
+Momentum Rate        : 111011101
+
+Phenotype Data
+Hidden Neuron        : 232
+Learning Rate        : 0.091797
+Momentum Rate        : 0.933594
+
+Fitness : 7.466457
+
+-----------------------------------------------------
+
+----Individual #49-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110010
+Learning Rate        : 000100110
+
+Momentum Rate        : 111111110
+
+Phenotype Data
+Hidden Neuron        : 242
+Learning Rate        : 0.076172
+Momentum Rate        : 0.998047
+
+Fitness : 7.466225
+
+-----------------------------------------------------
+
+----Individual #50-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111001
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.056641
+Momentum Rate        : 0.863281
+
+Fitness : 7.466139
+
+-----------------------------------------------------
+
+=========================================================
+
+=========================================================
+MATING POOL DATA
+=========================================================
+
+----Individual #1-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #2-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #3-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #4-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #5-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #6-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #7-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #8-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #9-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+----Individual #10-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.465924-----------------------------------------------------
+
+=========================================================
+
+=========================================================
+OFFSPRING DATA
+=========================================================
+
+----Individual #1-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 01111111
+Learning Rate        : 110010001
+
+Momentum Rate        : 111111101
+
+Phenotype Data
+Hidden Neuron        : 127
+Learning Rate        : 0.785156
+Momentum Rate        : 0.996094
+
+Fitness : 6.492037-----------------------------------------------------
+
+----Individual #2-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 001011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.173828
+
+Fitness : 7.321116-----------------------------------------------------
+
+----Individual #3-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111110
+Learning Rate        : 010001010
+
+Momentum Rate        : 100110001
+
+Phenotype Data
+Hidden Neuron        : 254
+Learning Rate        : 0.271484
+Momentum Rate        : 0.597656
+
+Fitness : 7.349493-----------------------------------------------------
+
+----Individual #4-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 10110011
+Learning Rate        : 000011101
+
+Momentum Rate        : 111110100
+
+Phenotype Data
+Hidden Neuron        : 179
+Learning Rate        : 0.058594
+Momentum Rate        : 0.978516
+
+Fitness : 7.432637-----------------------------------------------------
+
+----Individual #5-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100101
+Learning Rate        : 000110101
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 229
+Learning Rate        : 0.105469
+Momentum Rate        : 0.923828
+
+Fitness : 7.453403-----------------------------------------------------
+
+----Individual #6-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11100110
+Learning Rate        : 000101111
+
+Momentum Rate        : 111111010
+
+Phenotype Data
+Hidden Neuron        : 230
+Learning Rate        : 0.093750
+Momentum Rate        : 0.990234
+
+Fitness : 7.453453-----------------------------------------------------
+
+----Individual #7-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111111
+Learning Rate        : 000011100
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 255
+Learning Rate        : 0.056641
+Momentum Rate        : 0.871094
+
+Fitness : 7.462398-----------------------------------------------------
+
+----Individual #8-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100110
+
+Momentum Rate        : 111011000
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.076172
+Momentum Rate        : 0.923828
+
+Fitness : 7.463784-----------------------------------------------------
+
+----Individual #9-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11110111
+Learning Rate        : 000100010
+
+Momentum Rate        : 111011100
+
+Phenotype Data
+Hidden Neuron        : 247
+Learning Rate        : 0.068359
+Momentum Rate        : 0.931641
+
+Fitness : 7.466644-----------------------------------------------------
+
+----Individual #10-----------------------------------
+
+Genotype Data
+Hidden Neuron        : 11111101
+Learning Rate        : 000001110
+
+Momentum Rate        : 110111101
+
+Phenotype Data
+Hidden Neuron        : 253
+Learning Rate        : 0.029297
+Momentum Rate        : 0.871094
+
+Fitness : 7.467186-----------------------------------------------------
+
+=========================================================
+
